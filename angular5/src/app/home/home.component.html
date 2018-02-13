@@ -19,8 +19,8 @@
     </form>
   </div>
   <div class="col">
-    <p class="life-container">
-      I want to climb a mountain
+    <p class="life-container" *ngFor="let item of goals">
+        {{item}}
     </p>
   </div>
 </div>
