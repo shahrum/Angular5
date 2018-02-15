@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { DataService } from '../services/data.service';
 
 
 @Component({
@@ -8,12 +9,13 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent implements OnInit {
-
-  constructor(private activatedRoute:ActivatedRoute, private router:Router) {
+  goals : any;
+  constructor(private activatedRoute:ActivatedRoute, private router:Router, private data:DataService) {
   		this.activatedRoute.params.subscribe(res => console.log(res.id));
    }
 
   ngOnInit() {
+    this.data.goal.subscribe(res => this.goals = res);
   }
 
   sendMeHome(){
