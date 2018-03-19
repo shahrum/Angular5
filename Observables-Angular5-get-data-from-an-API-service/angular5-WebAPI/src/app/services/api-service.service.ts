@@ -17,14 +17,14 @@ export class ApiService {
     return this.http
                .get(this._postsUrl)
                .map((res:Response)=>{
-                 return <Iposts[]>res.json()
+                 return <Iposts>res.json();
                })
                .catch(this.handleError);
   }
   
   private handleError(error:Response){
     return Observable.throw(error.status);
-  } 
+  }
 
 
 }
