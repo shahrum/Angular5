@@ -13,7 +13,7 @@ export class ApiService {
 
   }
 
-  getPosts():Observable<Iposts>{
+  getPosts():Observable<Iposts[]>{
     return this.http
                .get(this._postsUrl)
                .map((res:Response)=>{
